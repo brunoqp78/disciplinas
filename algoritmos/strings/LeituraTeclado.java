@@ -13,7 +13,7 @@ public class LeituraTeclado {
 		System.out.println(texto1);
 		System.out.println(texto2);
 		System.out.println(texto3);
-
+		s.close();
 	}
 
 }

@@ -22,7 +22,7 @@ public class CompararStrings {
 		}else {
 			System.out.println("Deu errado");
 		}
-		
+		s.close();
 		// ignorar maiusculo e minusculo
 		//texto1.equalsIgnoreCase(anotherString)
 		
