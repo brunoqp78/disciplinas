@@ -23,6 +23,9 @@ public class CompararStrings {
 			System.out.println("Deu errado");
 		}
 		
+		// ignorar maiusculo e minusculo
+		//texto1.equalsIgnoreCase(anotherString)
+		
 		//não use ==, >, >=, <, <= para comparar texto
 		// equals , compareTo
 	}
