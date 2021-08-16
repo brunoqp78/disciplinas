@@ -1,4 +1,4 @@
-package algoritmos;
+package algoritmos.strings;
 
 import java.util.Scanner;
 
