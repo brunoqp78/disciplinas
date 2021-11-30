@@ -12,10 +12,22 @@ public class ExplicacaoArrayList {
 		String temp = "IFTM";
 		
 		objeto.add("UFU");
+		objeto.add("UFU");
 		objeto.add(1, "UFg");
 		objeto.add(objeto.size()-1, "Unesp");
 		objeto.add(temp);
 		objeto.set(0, "UFTM");
+		
+		ArrayList<Aluno> alunos = new ArrayList<Aluno>();
+		alunos.add(new Aluno("Bruno"));
+		alunos.add(new Aluno("Edson"));
+		alunos.add(new Aluno("Wilton"));
+		ArrayList<Aluno> novos = new ArrayList<Aluno>(alunos.subList(0, 1)) ;
+		for (Iterator iterator = novos.iterator(); iterator.hasNext();) {
+			Aluno aluno = (Aluno) iterator.next();
+			System.out.println(aluno.getNome());
+		}
+		
 		
 		List<String> tempList = objeto.subList(1, 3);
 		
@@ -24,12 +36,7 @@ public class ExplicacaoArrayList {
 			System.out.println(string);
 		}
 		
-		//objeto.clear();
-		
-		
-		
-		
-		
+		//objeto.clear();		
 		
 		
 		
@@ -47,5 +54,13 @@ public class ExplicacaoArrayList {
 }
 
 class Aluno{
+	private String nome;
 	
+	public Aluno(String nome) {
+		this.nome = nome;
+	}
+	
+	public String getNome() {
+		return nome;
+	}
 }
