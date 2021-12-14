@@ -14,7 +14,7 @@ public class Teste {
 		Scanner s = new Scanner(System.in);
 		
 		HashMap<String, String> mapa = new HashMap<>();
-		ArrayList<String> lista = new ArrayList<>();
+		ArrayList<Aluno> lista = new ArrayList<>();
 		HashSet<String> conjunto = new HashSet<>();
 		
 		// um método para colocar um par de valores no mapa
@@ -72,12 +72,31 @@ public class Teste {
 		HashMap<String, String> estados = new HashMap<>();
 		estados.put("MG", "Minas Gerais");
 		
-		System.out.println(estados.get(s.nextLine()));
+		//System.out.println(estados.get(s.nextLine()));
 		
 		HashMap<Integer, Aluno> bd = new HashMap<>();
 		Aluno aluno = new Aluno(1, "Bruno", 8);
 		bd.put(aluno.getCodigo(), aluno);
 		
+		
+		System.out.println("Exemplo extra\n\n\n");
+		
+		HashMap<Aluno, String> exemplo = new HashMap<>();
+		
+		exemplo.put(new Aluno(1, "Bruno", 8), "Sistemas para Internet");
+		exemplo.put(new Aluno(2, "Pedro", 5), "Licenciatura");
+		exemplo.put(new Aluno(3, "Jose", 9), "Sistemas para Internet");
+		
+		for (Map.Entry<Aluno, String> valores : exemplo.entrySet()) {
+			System.out.println(valores.getKey().getNome() + " - " + valores.getValue());
+		}
+		
+		//System.out.println(exemplo.get(new Aluno(s.nextInt(), s.next(), s.nextDouble())));
+		lista.add(new Aluno(1, "Bruno", 8));
+		lista.add(new Aluno(2, "Pedro", 2));
+		lista.add(new Aluno(3, "Jose", 3));
+		
+		System.out.println(lista.contains(new Aluno(1, "Pedro", 3)));
 	}
 
 }
@@ -116,6 +135,41 @@ class Aluno{
 	public void setNota(double nota) {
 		this.nota = nota;
 	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((codigo == null) ? 0 : codigo.hashCode());
+		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Aluno other = (Aluno) obj;
+		if (codigo == null) {
+			if (other.codigo != null)
+				return false;
+		} else if (!codigo.equals(other.codigo))
+			return false;
+		if (nome == null) {
+			if (other.nome != null)
+				return false;
+		} else if (!nome.equals(other.nome))
+			return false;
+		return true;
+	}
+
+	
+	
+	
 	
 }
 
